@@ -7,6 +7,7 @@ import javax.swing.*;
 
 public class MyFrame extends JFrame implements ActionListener
 {
+	// Testing a change
 	//aanmaken van de arrays waaruit willekeurig gekozen moet worden
 	protected String[] soort =  { "Schoppen", "Harten", "Klaveren", "Ruiten" };
 	protected String[] waarde = {"Aas", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Boer", "Vrouw", "Heer"};
