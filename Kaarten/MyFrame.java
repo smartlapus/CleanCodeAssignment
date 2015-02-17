@@ -7,17 +7,11 @@ import javax.swing.*;
 
 public class MyFrame extends JFrame implements ActionListener
 {
-	// Testing a change
-	//aanmaken van de arrays waaruit willekeurig gekozen moet worden
-	protected String[] soort =  { "Schoppen", "Harten", "Klaveren", "Ruiten" };
-	protected String[] waarde = {"Aas", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Boer", "Vrouw", "Heer"};
 	public JLabel lab1, uitput;
 	public JButton b;
 
-	private String s1 = "";
-	private String s2 = "";
-	private String w1 = "";
-	private String w2 = "";
+	protected MyFrameData kaart = new MyFrameData(new String[] { "Schoppen", "Harten", "Klaveren", "Ruiten" },
+			new String[] {"Aas", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Boer", "Vrouw", "Heer"}, "", "", "", "");
 
 	public MyFrame()
 	{
@@ -37,15 +31,15 @@ public class MyFrame extends JFrame implements ActionListener
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		s1 = soort[(int)(4 * Math.random())];
-		w1 = " " + waarde[(int)(13 * Math.random())];
+		kaart.s1 = kaart.soort[(int)(4 * Math.random())];
+		kaart.w1 = " " + kaart.waarde[(int)(13 * Math.random())];
 	}
 
 	public void actionPerformed(ActionEvent arg0)
 	{
 		//zodra je op de knop drukt wordt er willekeurig twee delen bij elkaar gehaald
-		s2 = soort[(int)(4 * Math.random())];
-		w2 = " " + waarde[(int)(13 * Math.random())];
+		kaart.s2 = kaart.soort[(int)(4 * Math.random())];
+		kaart.w2 = " " + kaart.waarde[(int)(13 * Math.random())];
 
 		//vergelijken met een standaard kaart
 		//Standaard kaart
@@ -53,7 +47,7 @@ public class MyFrame extends JFrame implements ActionListener
 		int vindSoort1 = -1;
 		for(soortZelf1 = 0; soortZelf1 < 4; soortZelf1++)
 		{
-			if(soort[soortZelf1] == s1)
+			if(kaart.soort[soortZelf1] == kaart.s1)
 			{
 				vindSoort1 = soortZelf1;
 			}
@@ -62,7 +56,7 @@ public class MyFrame extends JFrame implements ActionListener
 		int vindWaarde1 = -1;
 		for(waardeZelf1 = 0; waardeZelf1 < 13; waardeZelf1++)
 		{
-			if(waarde[waardeZelf1] == w1)
+			if(kaart.waarde[waardeZelf1] == kaart.w1)
 			{
 				vindWaarde1 = waardeZelf1;
 			}
@@ -73,7 +67,7 @@ public class MyFrame extends JFrame implements ActionListener
 		int vindSoort2 = -1;
 		for(soortZelf2 = 0; soortZelf2 < 4; soortZelf2++)
 		{
-			if(soort[soortZelf2] == s2)
+			if(kaart.soort[soortZelf2] == kaart.s2)
 			{
 				vindSoort2 = soortZelf2;
 			}
@@ -82,7 +76,7 @@ public class MyFrame extends JFrame implements ActionListener
 		int vindWaarde2 = -1;
 		for(waardeZelf2 = 0; waardeZelf2 < 13; waardeZelf2++)
 		{
-			if(waarde[waardeZelf2] == w2)
+			if(kaart.waarde[waardeZelf2] == kaart.w2)
 			{
 				vindWaarde2 = waardeZelf2;
 			}
