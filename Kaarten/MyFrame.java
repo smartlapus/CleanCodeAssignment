@@ -17,7 +17,7 @@ public class MyFrame extends JFrame implements ActionListener
 	{
 		setLayout(new FlowLayout());
 
-		lab1 = new JLabel("Druk op knop Kaart"); 
+		lab1 = new JLabel("Druk op knop Kaar"); 
 		add(lab1);
 
 		b = new JButton("Kaar");
